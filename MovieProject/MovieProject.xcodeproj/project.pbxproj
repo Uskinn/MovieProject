@@ -13,6 +13,7 @@
 		8A05F97A1DA139E0009FDA3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A05F9791DA139E0009FDA3F /* Assets.xcassets */; };
 		8A05F97D1DA139E0009FDA3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A05F97B1DA139E0009FDA3F /* LaunchScreen.storyboard */; };
 		8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52229A1DA1467600C571FA /* CollectionViewController.swift */; };
+		8A9AC28D1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9AC28C1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8A05F97C1DA139E0009FDA3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A05F97E1DA139E0009FDA3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A52229A1DA1467600C571FA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8A9AC28C1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				8A05F96F1DA139E0009FDA3F /* AppDelegate.swift */,
 				8A5222991DA1460200C571FA /* Controller */,
+				8A9AC28B1DA2FBD200DE2736 /* Cell */,
 				8A52229D1DA1469800C571FA /* CoreData */,
 				8A52229E1DA146B600C571FA /* Utility */,
 				8A52229C1DA1467E00C571FA /* Storyboard */,
@@ -97,6 +100,15 @@
 			children = (
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		8A9AC28B1DA2FBD200DE2736 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A9AC28C1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift */,
+			);
+			name = Cell;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +187,7 @@
 				8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */,
 				8A05F9781DA139E0009FDA3F /* MovieProject.xcdatamodeld in Sources */,
 				8A05F9701DA139E0009FDA3F /* AppDelegate.swift in Sources */,
+				8A9AC28D1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
