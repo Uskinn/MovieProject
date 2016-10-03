@@ -14,6 +14,7 @@
 		8A05F97D1DA139E0009FDA3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A05F97B1DA139E0009FDA3F /* LaunchScreen.storyboard */; };
 		8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52229A1DA1467600C571FA /* CollectionViewController.swift */; };
 		8A9AC28D1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9AC28C1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift */; };
+		8A9AC28F1DA3055E00DE2736 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9AC28E1DA3055E00DE2736 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8A05F97E1DA139E0009FDA3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A52229A1DA1467600C571FA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		8A9AC28C1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A9AC28E1DA3055E00DE2736 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				8A52229A1DA1467600C571FA /* CollectionViewController.swift */,
+				8A9AC28E1DA3055E00DE2736 /* MovieDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */,
+				8A9AC28F1DA3055E00DE2736 /* MovieDetailViewController.swift in Sources */,
 				8A05F9781DA139E0009FDA3F /* MovieProject.xcdatamodeld in Sources */,
 				8A05F9701DA139E0009FDA3F /* AppDelegate.swift in Sources */,
 				8A9AC28D1DA2FC1A00DE2736 /* MovieCollectionViewCell.swift in Sources */,

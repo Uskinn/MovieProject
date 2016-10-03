@@ -68,11 +68,69 @@
                     <navigationItem key="navigationItem" id="QEE-PD-4pj"/>
                     <connections>
                         <outlet property="movieCollectionView" destination="ozO-Wi-Ll1" id="vPZ-Dv-c6m"/>
+                        <segue destination="DFt-fm-B8Z" kind="show" identifier="toDetailVC" id="jsS-0M-pzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKh-g1-Zvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639.20000000000005" y="-51.724137931034484"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="oxO-eq-naV">
+            <objects>
+                <viewController id="DFt-fm-B8Z" customClass="MovieDetailViewController" customModule="MovieProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eHW-cZ-bLw"/>
+                        <viewControllerLayoutGuide type="bottom" id="uai-5g-eVI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EBI-GB-BH1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WAm-lX-ZSc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="YMf-Sl-Ihg"/>
+                                    <constraint firstAttribute="height" constant="257" id="zlB-PY-fIP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyM-WA-qXQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="fDo-fa-tTw"/>
+                                    <constraint firstAttribute="width" constant="200" id="wGD-y3-4AQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vo-8d-CDU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="218" id="b7y-RZ-AbU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pyM-WA-qXQ" firstAttribute="leading" secondItem="5Vo-8d-CDU" secondAttribute="leading" id="3E9-h3-yDR"/>
+                            <constraint firstItem="pyM-WA-qXQ" firstAttribute="leading" secondItem="EBI-GB-BH1" secondAttribute="leadingMargin" constant="7" id="Bee-ED-Piv"/>
+                            <constraint firstItem="WAm-lX-ZSc" firstAttribute="top" secondItem="eHW-cZ-bLw" secondAttribute="bottom" id="JJE-b1-WmS"/>
+                            <constraint firstItem="5Vo-8d-CDU" firstAttribute="top" secondItem="pyM-WA-qXQ" secondAttribute="bottom" constant="8" symbolic="YES" id="LIg-pw-nmb"/>
+                            <constraint firstItem="uai-5g-eVI" firstAttribute="top" secondItem="5Vo-8d-CDU" secondAttribute="bottom" constant="179" id="S3U-i1-v6Z"/>
+                            <constraint firstItem="WAm-lX-ZSc" firstAttribute="leading" secondItem="EBI-GB-BH1" secondAttribute="leading" id="nMQ-jS-mV2"/>
+                            <constraint firstItem="pyM-WA-qXQ" firstAttribute="top" secondItem="WAm-lX-ZSc" secondAttribute="bottom" constant="45" id="vNy-1C-dVu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moviePoster" destination="WAm-lX-ZSc" id="1pS-cO-1tx"/>
+                        <outlet property="movieTitle" destination="pyM-WA-qXQ" id="hJb-yB-74v"/>
+                        <outlet property="year" destination="5Vo-8d-CDU" id="Aai-3o-CE8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ugy-kY-jcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333.5999999999999" y="-53.523238380809602"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0XY-yO-4nT">
