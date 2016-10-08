@@ -10,36 +10,39 @@ import Foundation
 
 struct Movie {
     
-    var title: String?
-    var year: String?
+    // The five values received from a search query
+    var title: String
+    var year: String
+    var imdbID: String
+    var type: String
+    var posterURL: String
+    
+    // Other values received from subsequent network calls
     var director: String?
     var actors: String?
     var imdbRating: String?
     var metaScore: String?
     var plot: String?
-    var poster: String?
     var writer: String?
     var genre: String?
-    var imdbID: String?
     
-    static func mapFromDictionary(movieDictionary: NSDictionary) -> Movie {
+    init(details: [String: Any]) {
         
-        var movie = Movie()
+        self.title = details["Title"] as! String
+        self.year = details["Year"] as! String
+        self.imdbID = details["imdbID"] as! String
+        self.type = details["Type"] as! String
+        self.posterURL = details["Poster"] as! String
         
-        if let dictionary = movieDictionary as? [String: Any] {
-            
-            movie.title = dictionary["Title"] as? String
-            movie.year = dictionary["Year"] as? String
-            movie.director = dictionary["Director"] as? String
-            movie.actors = dictionary["Actos"] as? String
-            movie.imdbRating = dictionary["imdbRating"] as? String
-            movie.metaScore = dictionary["Metascore"] as? String
-            movie.plot = dictionary["Plot"] as? String
-            movie.poster = dictionary["Poster"] as? String
-            movie.writer = dictionary["Writer"] as? String
-            movie.genre = dictionary["Genre"] as? String
-            movie.imdbID = dictionary["imdbID"] as? String
-        }
-        return movie
     }
+    
+    mutating func updateMovieWith(details: [String: Any]) {
+        
+        self.director = ""
+        
+        
+    }
+    
+    
+
 }

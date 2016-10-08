@@ -9,10 +9,13 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
+    
+    var movieModel: Movie?
+    
     @IBOutlet weak var moviePoster: UIImageView!
-
     @IBOutlet weak var year: UILabel!
     @IBOutlet weak var movieTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
