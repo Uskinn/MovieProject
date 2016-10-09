@@ -20,16 +20,17 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchTerms = ["Taxi", "Matrix", "007"]
+        let searchTerms = ["Taxi", "", ""]
         
         OmdbApiClient.getMovieWithCompletion(searchTerm: searchTerms[0]) { results in
             
             let searchedMovies = results["Search"] as! [[String: Any]]
-            
+ 
             for movie in searchedMovies {
                 
                 let newMovie = Movie(details: movie)
-                print("\n\nnew movie object:\n\(newMovie.title)\n\n")
+                
+                print("\n\nnew movie object:\n\(newMovie)\n\n")
     
                 self.moviesArray.append(newMovie)
                 
@@ -46,11 +47,11 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
+        let cell: MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
         
         
-//        let imageData = NSData(contentsOf: "")
-//        let image = UIImage(data: imageData)
+        let imageData = NSData(contentsOf: self.moviesArray)
+        let image = UIImage(data: imageData)
         
         return cell
     }

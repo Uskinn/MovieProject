@@ -38,11 +38,12 @@ struct Movie {
     
     mutating func updateMovieWith(details: [String: Any]) {
         
-        self.director = ""
-        
-        
+        self.director = details["Director"] as? String
+        self.actors = details["Actors"] as? String
+        self.imdbRating = details["imdbRating"] as? String
+        self.metaScore = details["Metascore"] as? String
+        self.plot = details["Plot"] as? String
+        self.writer = details["Writer"] as? String
+        self.genre = details["Genre"] as? String
     }
-    
-    
-
 }

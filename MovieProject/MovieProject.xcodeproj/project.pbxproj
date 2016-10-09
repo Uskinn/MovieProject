@@ -88,7 +88,6 @@
 		8A05F96E1DA139E0009FDA3F /* MovieProject */ = {
 			isa = PBXGroup;
 			children = (
-				8A05F96F1DA139E0009FDA3F /* AppDelegate.swift */,
 				8A39BBDE1DA7F69200DB6A78 /* Model */,
 				8A5222991DA1460200C571FA /* Controller */,
 				8A9AC28B1DA2FBD200DE2736 /* Cell */,
@@ -96,6 +95,7 @@
 				8A52229E1DA146B600C571FA /* API */,
 				8A52229C1DA1467E00C571FA /* Storyboard */,
 				8A05F9791DA139E0009FDA3F /* Assets.xcassets */,
+				8A05F96F1DA139E0009FDA3F /* AppDelegate.swift */,
 				8A05F97E1DA139E0009FDA3F /* Info.plist */,
 			);
 			path = MovieProject;
