@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieDetailViewController: UIViewController {
     
@@ -18,12 +19,20 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.year.text = movieModel?.year
+        self.movieTitle.text = movieModel?.title
+        
+        if let poster = self.movieModel?.posterURL {
+            if let posterUrl = URL(string: poster) {
+                self.moviePoster.sd_setImage(with: posterUrl)
+            }
+        }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- }
+}

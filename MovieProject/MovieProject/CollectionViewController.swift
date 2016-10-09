@@ -23,22 +23,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         let searchTerms = ["Love", "", ""]
         
         OmdbApiClient.getMovieWithCompletion(searchTerm: searchTerms[0]) { results in
-            
             let searchedMovies = results["Search"] as! [[String: Any]]
- 
             for movie in searchedMovies {
-                
                 let newMovie = Movie(details: movie)
-                
-               // print("\n\nnew movie object:\n\(newMovie)\n\n")
-    
                 self.moviesArray.append(newMovie)
-                
             }
-            
-            OperationQueue.main.addOperation({ 
+            OperationQueue.main.addOperation({
                 self.movieCollectionView.reloadData()
-                
             })
         }
     }
@@ -52,37 +43,30 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell: MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
         
         let movie = self.moviesArray[(indexPath as IndexPath).row]
-        
-        print(movie.posterURL)
-        
-       let moviPoster = movie.posterURL
+        // print(movie.posterURL)
+        let moviPoster = movie.posterURL
         if let poster = URL(string: moviPoster) {
-            
             if let dataPoster = NSData(contentsOf: poster) {
-                 cell.moviePoster.image = UIImage(data: dataPoster as Data)
+                cell.moviePoster.image = UIImage(data: dataPoster as Data)
             }
-   
-        
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showMovie", sender: self)
+        self.performSegue(withIdentifier: "toDetailVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "showMovie" {
+        if segue.identifier == "toDetailVC" {
             
             if let indexPaths = self.movieCollectionView.indexPathsForSelectedItems {
                 let indexPath = indexPaths[0]
                 
                 let destinationVC = segue.destination as! MovieDetailViewController
                 
-                
-            
                 destinationVC.movieModel = self.moviesArray[indexPath.row]
             } else {
                 print("error occured")
