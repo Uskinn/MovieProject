@@ -19,7 +19,7 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         self.year.text = movieModel?.year
         self.movieTitle.text = movieModel?.title
         

@@ -16,15 +16,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var movieCollectionView: UICollectionView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchTerms = ["Love", "", ""]
+        let searchTerms = ["Peace", "War", "Love"]
         
         OmdbApiClient.getMovieWithCompletion(searchTerm: searchTerms[0]) { results in
-            let searchedMovies = results["Search"] as! [[String: Any]]
+            guard let searchedMovies = results["Search"] as? [[String: Any]] else {return print("error ")}
             for movie in searchedMovies {
                 let newMovie = Movie(details: movie)
                 self.moviesArray.append(newMovie)
@@ -40,17 +38,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell: MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
         let movie = self.moviesArray[(indexPath as IndexPath).row]
         // print(movie.posterURL)
         let moviPoster = movie.posterURL
         if let poster = URL(string: moviPoster) {
             cell.moviePoster.sd_setImage(with: poster)
-            
         }
-        
         return cell
     }
     
@@ -59,14 +53,10 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "toDetailVC" {
-            
             if let indexPaths = self.movieCollectionView.indexPathsForSelectedItems {
                 let indexPath = indexPaths[0]
-                
                 let destinationVC = segue.destination as! MovieDetailViewController
-                
                 destinationVC.movieModel = self.moviesArray[indexPath.row]
             } else {
                 print("error occured")
