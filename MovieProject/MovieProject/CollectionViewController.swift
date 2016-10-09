@@ -20,7 +20,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchTerms = ["Taxi", "", ""]
+        let searchTerms = ["Love", "", ""]
         
         OmdbApiClient.getMovieWithCompletion(searchTerm: searchTerms[0]) { results in
             
@@ -30,28 +30,40 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
                 
                 let newMovie = Movie(details: movie)
                 
-                print("\n\nnew movie object:\n\(newMovie)\n\n")
+               // print("\n\nnew movie object:\n\(newMovie)\n\n")
     
                 self.moviesArray.append(newMovie)
                 
-            
             }
             
-            // pop on the main thread and reload the collection view to view new information
+            OperationQueue.main.addOperation({ 
+                self.movieCollectionView.reloadData()
+                
+            })
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return moviesArray.count
+        return self.moviesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: MovieCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MovieCollectionViewCell
         
+        let movie = self.moviesArray[(indexPath as IndexPath).row]
         
-        let imageData = NSData(contentsOf: self.moviesArray)
-        let image = UIImage(data: imageData)
+        print(movie.posterURL)
+        
+       let moviPoster = movie.posterURL
+        if let poster = URL(string: moviPoster) {
+            
+            if let dataPoster = NSData(contentsOf: poster) {
+                 cell.moviePoster.image = UIImage(data: dataPoster as Data)
+            }
+   
+        
+        }
         
         return cell
     }
