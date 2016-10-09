@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
@@ -46,9 +47,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         // print(movie.posterURL)
         let moviPoster = movie.posterURL
         if let poster = URL(string: moviPoster) {
-            if let dataPoster = NSData(contentsOf: poster) {
-                cell.moviePoster.image = UIImage(data: dataPoster as Data)
-            }
+            cell.moviePoster.sd_setImage(with: poster)
+            
         }
         
         return cell
