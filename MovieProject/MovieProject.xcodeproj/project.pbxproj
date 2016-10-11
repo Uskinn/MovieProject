@@ -16,6 +16,9 @@
 		8A39BBDB1DA7F61C00DB6A78 /* OmdbApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A39BBDA1DA7F61C00DB6A78 /* OmdbApiClient.swift */; };
 		8A39BBDD1DA7F68800DB6A78 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A39BBDC1DA7F68800DB6A78 /* MovieCollectionViewCell.swift */; };
 		8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A52229A1DA1467600C571FA /* CollectionViewController.swift */; };
+		8A54DCB41DAADDF80005F1B5 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54DCB31DAADDF80005F1B5 /* DataStore.swift */; };
+		8A54DCBF1DAB37430005F1B5 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54DCBD1DAB37430005F1B5 /* Movie+CoreDataClass.swift */; };
+		8A54DCC01DAB37430005F1B5 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A54DCBE1DAB37430005F1B5 /* Movie+CoreDataProperties.swift */; };
 		8A9AC28F1DA3055E00DE2736 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9AC28E1DA3055E00DE2736 /* MovieDetailViewController.swift */; };
 		8A9AC2911DA3084900DE2736 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9AC2901DA3084900DE2736 /* Movie.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,9 @@
 		8A39BBDA1DA7F61C00DB6A78 /* OmdbApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmdbApiClient.swift; sourceTree = "<group>"; };
 		8A39BBDC1DA7F68800DB6A78 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCollectionViewCell.swift; path = MovieProject/MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A52229A1DA1467600C571FA /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8A54DCB31DAADDF80005F1B5 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		8A54DCBD1DAB37430005F1B5 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8A54DCBE1DAB37430005F1B5 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8A9AC28E1DA3055E00DE2736 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		8A9AC2901DA3084900DE2736 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		AA8B2C9E3053D39E9B59AA24 /* Pods-MovieProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieProject/Pods-MovieProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +136,10 @@
 		8A52229D1DA1469800C571FA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8A54DCBD1DAB37430005F1B5 /* Movie+CoreDataClass.swift */,
+				8A54DCBE1DAB37430005F1B5 /* Movie+CoreDataProperties.swift */,
 				8A05F9761DA139E0009FDA3F /* MovieProject.xcdatamodeld */,
+				8A54DCB31DAADDF80005F1B5 /* DataStore.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -277,9 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A52229B1DA1467600C571FA /* CollectionViewController.swift in Sources */,
+				8A54DCB41DAADDF80005F1B5 /* DataStore.swift in Sources */,
 				8A9AC28F1DA3055E00DE2736 /* MovieDetailViewController.swift in Sources */,
 				8A39BBDB1DA7F61C00DB6A78 /* OmdbApiClient.swift in Sources */,
+				8A54DCBF1DAB37430005F1B5 /* Movie+CoreDataClass.swift in Sources */,
 				8A9AC2911DA3084900DE2736 /* Movie.swift in Sources */,
+				8A54DCC01DAB37430005F1B5 /* Movie+CoreDataProperties.swift in Sources */,
 				8A05F9781DA139E0009FDA3F /* MovieProject.xcdatamodeld in Sources */,
 				8A05F9701DA139E0009FDA3F /* AppDelegate.swift in Sources */,
 				8A39BBDD1DA7F68800DB6A78 /* MovieCollectionViewCell.swift in Sources */,
