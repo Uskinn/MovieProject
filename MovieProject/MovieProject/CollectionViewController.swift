@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import CoreData
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
